@@ -2,3 +2,11 @@
 Form that asks for Username + Email
 
 Stores [Username] information in LocalStorage
+<div class="container"> 
+    <router-outlet></router-outlet> 
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>
+      <button>Login</button>
+    </form>
+</div>
