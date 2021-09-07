@@ -1,6 +1,14 @@
+
 <p>group works!</p>
 
-
+<li *ngFor="let pag of page; index as i;">
+    {{i}} {{pag}}{{channel[i]}}{{assis[i]}}
+</li>
+<!--
+<li *ngFor="let user of users; index as i; first as isFirst">
+    {{i}}/{{users.length}}. {{user}} <span *ngIf="isFirst">default</span>
+  </li>
+-->
 Display a list of the user's current accessible groups.
 If Group Assis OR Group Admin:
   

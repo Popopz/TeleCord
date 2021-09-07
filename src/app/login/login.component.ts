@@ -30,6 +30,5 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     console.log('Reading local json files');
     console.log(TeleCord);
-    let mytest = []
   }
 }
