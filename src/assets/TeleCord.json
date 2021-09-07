@@ -1,12 +1,21 @@
 {
-  "user": {
-    "username": "123",
-    "email": "abc@com.au",
-    "role": ["SuperAdmin","GroupAdmin","User"]
-  },
-  "group": {
-    "page": "default",
-    "channel": ["default1","default2"],
-    "assis": ["abc@com.au","123@com.au"]
-  }
+  "user": [
+    {
+      "username": "123",
+      "email": "abc@com.au",
+      "role": ["SuperAdmin","GroupAdmin","User"]
+    },
+    {
+      "username": "123",
+      "email": "abc@com.au",
+      "role": ["SuperAdmin","GroupAdmin","User"]
+    }
+  ],
+  "group": [
+      {
+      "page": "default",
+      "channel": ["default1","default2"],
+      "assis": ["abc@com.au","123@com.au"]
+    }
+  ]
 }
