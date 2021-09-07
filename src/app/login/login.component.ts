@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     }
     if(okay){
       sessionStorage.setItem('valid', 'true')
-      this.router.navigateByUrl('/account');
+      this.router.navigateByUrl('/group');
     }
     else{
       alert("Error: Incorrect Username/Password");

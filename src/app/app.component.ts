@@ -10,7 +10,8 @@ export class AppComponent {
   constructor(private router: Router) { }
   title = 'TeleCord';
   logout(){
-    sessionStorage.clear;
+    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigateByUrl('/login');
   }
 }
