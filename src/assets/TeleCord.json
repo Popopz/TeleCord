@@ -1,28 +1,52 @@
 {
-  "user": [
-    {
-      "username": "123",
-      "email": "abc@com.au",
-      "role": ["SuperAdmin","GroupAdmin","User"],
-      "groups": ["default"]
-    },
-    {
-      "username": "123",
-      "email": "abc@com.au",
-      "role": ["SuperAdmin","GroupAdmin","User"],
-      "groups": ["notdefault"]
-    }
+  "user":[
+     {
+        "username":"123",
+        "email":"abc@com.au",
+        "role":[
+           "SuperAdmin",
+           "GroupAdmin",
+           "User"
+        ],
+        "groups":[
+           "default"
+        ]
+     },
+     {
+        "username":"pass",
+        "email":"123@com.au",
+        "role":[
+           "SuperAdmin",
+           "GroupAdmin",
+           "User"
+        ],
+        "groups":[
+           "notdefault"
+        ]
+     }
   ],
-  "group": [
-      {
-      "page": "default",
-      "channel": ["Channel 1","Channel 2"],
-      "assis": ["abc@com.au","123@com.au"]
-    },
-    {
-      "page": "notDefault",
-      "channel": ["Not Channel 1","Not Channel 2"],
-      "assis": ["abc@com.au","123@com.au"]
-    }
+  "group":[
+     {
+        "page":"default",
+        "channel":[
+           "Channel 1",
+           "Channel 2"
+        ],
+        "assis":[
+           "abc@com.au",
+           "123@com.au"
+        ]
+     },
+     {
+        "page":"notDefault",
+        "channel":[
+           "Not Channel 1",
+           "Not Channel 2"
+        ],
+        "assis":[
+           "abc@com.au",
+           "123@com.au"
+        ]
+     }
   ]
 }

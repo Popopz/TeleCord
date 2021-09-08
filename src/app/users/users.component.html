@@ -1,4 +1,24 @@
 <p>users works!</p>
+
+<li *ngFor="let user of username; index as i;">
+    {{i}} {{user}}{{email[i]}}{{role[i]}}{{groups[i]}}
+</li>
+
+<div class="container"> 
+    <router-outlet></router-outlet> 
+    <form #createForm="ngForm" (ngSubmit)="createUser(createForm.value)">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+      <!--<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>-->
+      <button>Create User</button>
+    </form>
+    <form #deleteForm="ngForm" (ngSubmit)="deleteUser(deleteForm.value)">
+        <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+        <!--<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>-->
+        <button>Remove User</button>
+      </form>
+</div>
+
+
 Display's the user's current information
 
 If SuperAdmin:
