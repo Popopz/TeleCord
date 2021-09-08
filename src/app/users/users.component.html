@@ -1,9 +1,23 @@
-<p>users works!</p>
-
-<li *ngFor="let user of username; index as i;">
-    {{i}} {{user}}{{email[i]}}{{role[i]}}{{groups[i]}}
-</li>
-
+<p>Users Page</p>
+<p>This Page shows your current profile Information, including your Email, Roles, Groups etc.</p>
+<p>If you are a SuperAdmin, then you can also make modifications to Users aswell!</p>
+<table>
+  <tr>
+    <th>Number</th>
+    <th>UserName</th>
+    <th>Email</th>
+    <th>List of Roles</th>
+    <th>List of Groups</th>
+  </tr>
+  <tr *ngFor="let user of username; index as i;">
+    <td>{{i}}</td>
+    <td>{{user}}</td>
+    <td>{{email[i]}}</td>
+    <td>{{role[i]}}</td>
+    <td>{{groups[i]}}</td>
+  </tr>
+</table>
+<ng-template [ngIf]="roles == 'SuperAdmin'">
 <div class="container"> 
     <router-outlet></router-outlet> 
     <form #createForm="ngForm" (ngSubmit)="createUser(createForm.value)">
@@ -17,11 +31,4 @@
         <button>Remove User</button>
       </form>
 </div>
-
-
-Display's the user's current information
-
-If SuperAdmin:
-Display the list of all users
-Add an option to remove one of the users
-Add an option to Create a new user.
+</ng-template>

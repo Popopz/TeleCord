@@ -1,7 +1,7 @@
-<p>login works!</p>
-Form that asks for Username + Email
+<p>Login Page!</p>
+<p>This page is for logging into TeleCord, please put in your Username + Email into the Form Below</p>
+<p>*Note: that your information will be stored inside of LocalStorage, and you should use the Logout button to logout at any time!</p>
 
-Stores [Username] information in LocalStorage
 <div class="container"> 
     <router-outlet></router-outlet> 
     <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">

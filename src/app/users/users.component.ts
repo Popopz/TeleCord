@@ -9,6 +9,26 @@ import TeleCord from '../../assets/TeleCord.json';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  roles = this.getRole()
+  getRole(){
+    var listOfRoles = ['User']
+    for (let i = 0; i < TeleCord.user.length; i++){
+      if(TeleCord.user[i].username == localStorage.getItem("username")){
+        listOfRoles = TeleCord.user[i].role;
+        break
+      }
+    }
+    var highestRole;
+    for (let i = 0; i < listOfRoles.length; i++){
+      if (listOfRoles[i] == 'SuperAdmin'){
+        return 'SuperAdmin';
+      }
+      if(listOfRoles[i] == 'GroupAdmin'){
+        highestRole = 'GroupAdmin';
+      }
+    }
+    return highestRole
+  }
   parsedJson: any;
   createUser(thing: any){
     console.log("Creating new User");

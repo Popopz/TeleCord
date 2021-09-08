@@ -1,10 +1,23 @@
 
-<p>group works!</p>
+<p>Group Page!</p>
+<p>This page shows the current list of all of your accessible groups!</p>
+<p>If you are an Admin, you can also gain access to Forms to make changes to the Groups!</p>
 
-<li *ngFor="let pag of page; index as i;">
-    {{i}} {{pag}}{{channel[i]}}{{assis[i]}}
-</li>
-
+<table>
+  <tr>
+    <th>Number</th>
+    <th>GroupName</th>
+    <th>Channels</th>
+    <th>List of Assis</th>
+  </tr>
+  <tr *ngFor="let pag of page; index as i;">
+    <td>{{i}}</td>
+    <td>{{pag}}</td>
+    <td>{{channel[i]}}</td>
+    <td>{{assis[i]}}</td>
+  </tr>
+</table>
+<ng-template [ngIf]="roles == 'SuperAdmin' || roles == 'GroupAdmin'">
 <div class="container"> 
   <router-outlet></router-outlet> 
   <form #createGroupForm="ngForm" (ngSubmit)="createGroup(createGroupForm.value)">
@@ -26,12 +39,9 @@
       <button>Create Assis in Group!</button>
     </form>
 </div>
+</ng-template>
 <!--
 <li *ngFor="let user of users; index as i; first as isFirst">
     {{i}}/{{users.length}}. {{user}} <span *ngIf="isFirst">default</span>
   </li>
 -->
-Display a list of the user's current accessible groups.
-If Group Assis OR Group Admin:
-  
-Display a list of the user's current accessible Channels.
