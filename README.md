@@ -37,6 +37,10 @@ group: group
 REST API:
 *variables are in first letter Uppercase, for better reading purposes. The code used normal camelCase rules.
 
+/user, /group
+get<variable>()
+The get<Variable> is used for each Variable that needs to be displayed to the HTML component. For each item, a simple piece of code to query the TeleCord.JSON object and obtain the full-list and return the corresponding value. There is 10 or more of them, so it's unfeasible to list them all here, especially since the Functions are almost identical. In the next version, I will work to see if Polymorphism can be used to merge the similar Functions together.
+
 /login:
 loginUser(Username, Email)
 Checks through each user in the TeleCord.JSON file and, if the Username and Email provided through the function are the same as an existing user, it stores the User’s name in LocalStorage. The security for the system is Extremely Lax, and hasn’t been considered for this version.
