@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #9e9ef7;
+}
+table, th, td {
+    border: 1px solid black;
+}
+p {
+    text-indent: 30px;
+    font-size: larger;
+    font-weight: bold;
+  }
+ul{
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+li {
+    display: inline;
+    margin: 3em;
+}
+li a{
+    font-size: larger;
+    display: inline;
+    color: white;
+}
+li a:hover{
+    color: white;
+    background-color: #010166;
+}
+input{
+    color: black;
+    background-color: #9ef7b1;
+}
