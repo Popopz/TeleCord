@@ -8,6 +8,76 @@ import TeleCord from '../../assets/TeleCord.json';
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
+  createGroup(thing:any){
+    console.log("Creating new Group!");
+    var notDuplicate = true;
+    for (let i = 0; i < TeleCord.group.length; i++){
+      if (TeleCord.group[i].page == thing.page){
+        notDuplicate = false;
+        alert("Name already chosen!");
+      }
+    }
+    if (notDuplicate){
+      TeleCord.group.push({
+        "page": thing.page,
+        "channel":[
+           thing.channel
+        ],
+        "assis":[
+           "abc@com.au"
+        ]
+     })
+      console.log("I do not know how to connect to Node.js!");
+      var list = []
+      for (let i = 0; i < TeleCord.group.length; i++){
+        list.push(TeleCord.group[i].page);
+      }
+      console.log("here is a List of the current Usernames in Object:" + list);
+    }
+    //parse TeleCord to Node!!!
+  }
+  addUserToGroup(thing:any){
+    thing.page;
+    thing.username;
+    var notDuplicate = true;
+    var pageExists = false;
+    var userExists = false;
+    var userIndex = 0;
+    for (let i = 0; i < TeleCord.user.length; i++){
+      if (TeleCord.user[i].username == thing.username){
+        userIndex = i
+        userExists = true
+      }
+    }
+    for (let i = 0; i < TeleCord.group.length; i++){
+      if (TeleCord.group[i].page == thing.page){
+        pageExists = true
+      }
+    }
+    if (!userExists){alert("User not found!");}
+    if (!pageExists){alert("Group not found!");}
+    if (userExists && pageExists){
+      for (let i = 0; i < TeleCord.user[i].groups.length; i++){
+        if (TeleCord.user[userIndex].groups[i] == thing.page){
+          notDuplicate = false;
+          alert("Already in that Group!");
+          break;
+        }
+      }
+    }
+    if (notDuplicate){
+      TeleCord.user[userIndex].groups.push(thing.page)
+      console.log(TeleCord);
+    }
+  }
+  addAssisToGroup(thing:any){
+    thing.username
+    thing.page
+  }
+  //For Assignment 2: removeAssisToGroup(){}
+  //removeUserFromGroup(){}
+
+
   page = this.getPage();
   assis = this.getAssis();
   channel = this.getChannel();

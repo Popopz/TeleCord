@@ -4,6 +4,28 @@
 <li *ngFor="let pag of page; index as i;">
     {{i}} {{pag}}{{channel[i]}}{{assis[i]}}
 </li>
+
+<div class="container"> 
+  <router-outlet></router-outlet> 
+  <form #createGroupForm="ngForm" (ngSubmit)="createGroup(createGroupForm.value)">
+    <input type="text" id="page" class="fadeIn second" name="page" placeholder="page" ngModel>
+    <input type="text" id="channel" class="fadeIn second" name="channel" placeholder="channel" ngModel>
+    <!--<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>-->
+    <button>Create a new Group</button>
+  </form>
+  <form #addUserForm="ngForm" (ngSubmit)="addUserToGroup(addUserForm.value)">
+    <input type="text" id="page" class="fadeIn second" name="page" placeholder="page" ngModel>
+    <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+      <!--<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>-->
+      <button>Add an existing user to Group</button>
+    </form>
+    <form #addAssisForm="ngForm" (ngSubmit)="addAssisToGroup(addAssisForm.value)">
+      <input type="text" id="page" class="fadeIn second" name="page" placeholder="page" ngModel>
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+      <!--<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>-->
+      <button>Create Assis in Group!</button>
+    </form>
+</div>
 <!--
 <li *ngFor="let user of users; index as i; first as isFirst">
     {{i}}/{{users.length}}. {{user}} <span *ngIf="isFirst">default</span>
