@@ -1,18 +1,18 @@
-Documentation:
+#Documentation:
 
-Things the project does NOT do:
+###Things the project does NOT do:
 - I could not get Node and Angular to talk to each other, so nothing is Saved to File-System, however, Angular’s Object does remember and modify itself, so these changes are done, just never saved.
 - I ran out of time, and so a lot of security issues, and a few Update functions have not been implemented.
 - Also Group Assis's Logic was not completed yet either, due to a fairly bad Headache on Wednesday night. :/
 
 *Note: I did add documentation for the unimplemented features.
 
-Git:
+##Git:
 To use Git, I took the easy option, and relied on Visual Studio Code’s Git functions. Whenever I completed something and cleared my mind, I would commit the changes. The normal method of using git add, and git commit -m “message”, etc was unnecessary compared to the usefulness of Visual Studio’s Source Control tab. Since I, and I alone was working on the project, I did not need to regularly upload the files to Github, apart from ensuring data loss did not occur.
 https://imgur.com/a/RJLjM89 <-Image of Visual Studio Code's button.
 GitHub, ‘the largest code host in the world’ has a simple design, and is a great option for online storage of Code. As such and more, Visual Studio Code has a handy button for publishing straight to GitHub.
 
-Data Structures:
+##Data Structures:
 The data structures in the current version, is all determined by the TeleCord.JSON file. In future version MongoDB will be used to store data instead.
 The TeleCord JSON file is made of 2 parts. The User part deals with information to do with the user. It stores the user’s name, which should be unique to that user. An email, that might have some email verification at a later point. Role which is an array of strings for each possible role a user might have. By default a user always has the role ‘user’ but ‘Super Admin’ and ‘Group Admin’ are also used in the current system. It would be very easy to implement new or custom roles to the list. Note that the ‘Group Assis’ role is specific to the corresponding group, and is saved in the Group Part. The groups string array, is the list of all the groups the user has access to. It corresponds to the Group’s Page string.
 The Group part deals with any information to deal with groups. It stores the “page” name which is what is used as the ID. As such each Page name must be unique. A list of channels are also saved, and future versions would save information corresponding to a channel here as well, like any messages. The Assis string array, lists all of the usernames of Group Assis users.
@@ -35,7 +35,7 @@ group: group
 }
 
 
-REST API:
+##REST API:
 *variables are in first letter Uppercase, for better reading purposes. The code used normal camelCase rules.
 
 /user, /group
@@ -96,15 +96,15 @@ Searches for the group with GroupName, it then loops through the channel array, 
 
 *I couldn’t get Node and Angular to talk to each other, so I wasn’t able to actually implement any of the above mentioned features, and instead had Angular deal with all of the work. It was fairly possible to complete each feature, except for saving the JSON file, so changes made would be reset when another page was loaded.
 
-Architecture:
+##Architecture:
 TeleCord.JSON
 The project uses the TeleCord.JSON file to deal with any information storage server-side. For more information look at “Data Structures” above.
 
-Angular
+###Angular
 The Angular client-side holds 3 pages. The User page deals with showing the user’s current information, and if the user is a SuperAdmin, forms to Modify the information. The Group page shows all of the groups and channels that the user has access to. If the user has a Role which allows them to modify the Group contents, or add Group Assis users, the forms are available for them aswell. The Login is the final page, which simply asks for the user to fill a form with their login information. The user is redirected to the Login page if they attempt to view any other page without having a set LocalStorage value for their username. In the second version, proper security will be used instead.
 
 
-Node
+###Node
 The Node Server-Side client deals with the actual Writing to Files. Angular cannot use the ‘fs’ File-System. A vast majority of the project is completed inside of Angular, and so Node wasn’t used as much as it could’ve been. The saveJSON(JSON) function created in app.js is used frequently every time the server makes changes to TeleCord.JSON. In the next version of the Project, Node will take a much bigger and active role, with MongoDB, and other server-side actions.
 
 
