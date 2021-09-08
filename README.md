@@ -3,6 +3,7 @@ Documentation:
 Things the project does NOT do:
 - I could not get Node and Angular to talk to each other, so nothing is Saved to File-System, however, Angular’s Object does remember and modify itself, so these changes are done, just never saved.
 - I ran out of time, and so a lot of security issues, and a few Update functions have not been implemented.
+- Also Group Assis's Logic was not completed yet either, due to a fairly bad Headache on Wednesday night. :/
 
 *Note: I did add documentation for the unimplemented features.
 
